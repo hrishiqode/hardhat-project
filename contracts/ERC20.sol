@@ -67,7 +67,7 @@ contract ERC20 is IERC20{
         return balance[_owner];
     }
 
-    function transfer(address _to, uint256 _value) public returns (bool success){
+    function transfer(address _to, uint256 _value) public returns (bool){
         require(balance[msg.sender] >= _value, "Not enough balance");
         balance[msg.sender]=balance[msg.sender]-_value;
         balance[_to]=balance[_to]+_value;
